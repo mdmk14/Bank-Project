@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Deposit Amount</title>
+    <style>
+        #main
+       {
+        width:400px;
+        height:200px;
+        border:1px solid white;
+        border-radius:20px;
+        margin:0 auto;
+        margin-top:100px;
+      }
+    </style>
+</head>
+<body style="background-image:url('{% static "images/background.jpg" %}');">
+    <div id ="main">
+        <h1 style="color:red; text-align:center;">Deposit Amount</h1>
+        <form action="{% url 'depositamt'%}" method="post">
+            {% csrf_token %}
+            <table style="margin: 0 auto;width:100%;">
+                <tr>
+                    <td style="color:white;">Enter Amount To Deposit</td>
+                    <td>
+                        <input type="number" name="amt"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>
+                        <input type="submit" value="Submit"/>
+                    </td>
+                </tr>
+            </table>
+        </form>
+
+
+</div>
+
+</body>
+</html>
